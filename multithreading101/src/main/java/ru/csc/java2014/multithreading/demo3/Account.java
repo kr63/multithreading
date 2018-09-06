@@ -2,7 +2,7 @@ package ru.csc.java2014.multithreading.demo3;
 
 public class Account {
 
-    private /*volatile*/ long balance;
+    private long balance;
 
     public Account() {
         this(0L);
@@ -18,15 +18,19 @@ public class Account {
 
     void deposit(long amount) {
         checkAmountNonNegative(amount);
-        balance += amount;
+        synchronized (this) {
+            balance += amount;
+        }
     }
 
     void withdraw(long amount) {
         checkAmountNonNegative(amount);
-        if (balance < amount) {
-            throw new IllegalArgumentException("not enough money");
+        synchronized (this) {
+            if (balance < amount) {
+                throw new IllegalArgumentException("not enough money");
+            }
+            balance -= amount;
         }
-        balance -= amount;
     }
 
     private static void checkAmountNonNegative(long amount) {

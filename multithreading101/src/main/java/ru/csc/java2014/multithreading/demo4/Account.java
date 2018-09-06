@@ -34,6 +34,7 @@ public class Account {
             throws InterruptedException {
         checkAmountNonNegative(amount);
         while (balance < amount) {
+            System.out.println("Current balance: " + balance);
             wait();
         }
         balance -= amount;
