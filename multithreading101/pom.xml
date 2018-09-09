@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.csc.java2014</groupId>
-    <artifactId>multithreading</artifactId>
+    <artifactId>multithreading101</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <build>
