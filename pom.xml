@@ -12,6 +12,7 @@
     <modules>
         <module>multithreading101</module>
         <module>multithreading201</module>
+        <module>m101-concurrent-collections</module>
     </modules>
 
     <properties>
